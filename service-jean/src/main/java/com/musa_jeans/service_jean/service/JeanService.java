@@ -30,4 +30,13 @@ public class JeanService {
     public void eliminar(Long id) {
         jeanRepository.deleteById(id);
     }
+
+    public List<Jean> buscarPorTalla(String talla) {
+        return jeanRepository.findByTallaIgnoreCase(talla);
+    }
+
+    public List<Jean> buscarPorMarcaNombre(String nombre) {
+        return jeanRepository.findByMarcaNombreIgnoreCase(nombre);
+    }
+
 }
